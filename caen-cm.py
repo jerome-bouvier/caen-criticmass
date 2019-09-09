@@ -25,9 +25,10 @@ dates = sheet.col_values(1)
 dates = dates[5:]
 values = sheet.col_values(2)
 values = values[5:]
+datas = dict(zip(dates, values))
 
 # Graph
-plt.plot(dates, values)
+plt.plot(datas.keys(), datas.values())
 plt.xlabel('date')
 plt.ylabel('Nombres de cyclistes')
 plt.title('Evolution du nombre de cyclistes @ Caen depuis avril 2018')
